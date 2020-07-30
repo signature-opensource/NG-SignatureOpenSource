@@ -163,6 +163,46 @@
           }
         }
       }
+    },
+    "signature-router-history": {
+      "projectType": "library",
+      "root": "projects/signature-router-history",
+      "sourceRoot": "projects/signature-router-history/src",
+      "prefix": "signature",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/signature-router-history/tsconfig.lib.json",
+            "project": "projects/signature-router-history/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/signature-router-history/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/signature-router-history/src/test.ts",
+            "tsConfig": "projects/signature-router-history/tsconfig.spec.json",
+            "karmaConfig": "projects/signature-router-history/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/signature-router-history/tsconfig.lib.json",
+              "projects/signature-router-history/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ng-SignatureOpenSource"
 }
