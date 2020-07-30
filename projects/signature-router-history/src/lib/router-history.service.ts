@@ -126,7 +126,13 @@ export class RouterHistoryService {
       });
   }
 
-  // Pushes HistoryEntry and manages callbacks
+  /**
+   * Pushes HistoryEntry and manages callbacks
+   * @param title
+   * @param queryParams
+   * @param url
+   * @param callback
+   */
   public async pushState(title: string, queryParams?: string, url?: string, callback?: () => void): Promise<void> {
     if (!url) {
       url = this.historyList[this.currentIndex].url;
