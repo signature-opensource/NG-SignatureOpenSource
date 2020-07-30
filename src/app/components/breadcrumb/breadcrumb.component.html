@@ -1,0 +1,17 @@
+<nz-breadcrumb>
+  <ng-container *ngFor="let item of breadcrumbItemList">
+    <nz-breadcrumb-item *ngIf="item.childs; else noChilds" [nzOverlay]="menu">
+      <a (click)="revert(item)">{{item.label}}</a>
+    </nz-breadcrumb-item>
+    <ng-template #noChilds>
+      <nz-breadcrumb-item>
+        <a (click)="revert(item)">{{item.label}}</a>
+      </nz-breadcrumb-item>
+    </ng-template>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li *ngFor="let child of item.childs" (click)="goto(child, item)">{{child.label}}</li>
+      </ul>
+    </nz-dropdown-menu>
+  </ng-container>
+</nz-breadcrumb>

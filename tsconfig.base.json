@@ -29,5 +29,26 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/signature-breadcrumb/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/signature-breadcrumb/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/signature-router-history/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/signature-router-history/tsconfig.spec.json"
+    }
+  ]
 }
