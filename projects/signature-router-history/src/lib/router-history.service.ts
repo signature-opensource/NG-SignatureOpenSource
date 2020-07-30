@@ -11,22 +11,28 @@ export type RouterNavigationEvent = NavigationStart | NavigationEnd;
   providedIn: 'root'
 })
 export class RouterHistoryService {
-  public previousUrl$ = new BehaviorSubject<string | null>(null);
-  public currentUrl$ = new BehaviorSubject<string | null>(null);
-  public browserBack$ = new Subject<PopStateEvent>();
-  public browserForward$ = new Subject<PopStateEvent>();
+  public previousUrl$: BehaviorSubject<string | null>;
+  public currentUrl$: BehaviorSubject<string | null>;
+  public browserBack$: Subject<PopStateEvent>;
+  public browserForward$: Subject<PopStateEvent>;
 
   private currentIndex: number;
-  private historyList: Array<HistoryEntry> = [];
-  private historyCallbacks: {[id: string]: Array<() => void>} = {};
+  private historyList: Array<HistoryEntry>;
+  private historyCallbacks: { [id: string]: Array<() => void> };
 
   constructor(
     private router: Router,
     private location: Location,
     private locationStrategy: LocationStrategy
-  )
-  {
+  ) {
+    this.previousUrl$ = new BehaviorSubject<string | null>(null);
+    this.currentUrl$ = new BehaviorSubject<string | null>(null);
+    this.browserBack$ = new Subject<PopStateEvent>();
+    this.browserForward$ = new Subject<PopStateEvent>();
+
     this.currentIndex = 0;
+    this.historyList = new Array<HistoryEntry>();
+    this.historyCallbacks = {};
 
     // Listen to browser forward and backward events, to execute the corresponding callback
     this.location.subscribe((event: PopStateEvent) => {
@@ -121,7 +127,7 @@ export class RouterHistoryService {
   }
 
   // Pushes HistoryEntry and manages callbacks
-  public async pushState(title: string, queryParams?: string, url?: string, callback?: () =>  void): Promise<void> {
+  public async pushState(title: string, queryParams?: string, url?: string, callback?: () => void): Promise<void> {
     if (!url) {
       url = this.historyList[this.currentIndex].url;
     }
