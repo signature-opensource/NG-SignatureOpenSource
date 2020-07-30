@@ -103,7 +103,7 @@ export class BreadcrumbService {
    * @param breadcrumbs
    */
   private buildBreadCrumb(route: ActivatedRoute, url: string = '', breadcrumbs: BreadcrumbLocations = []): BreadcrumbLocations {
-    // If no routeConfig is avalailable we are on the root path
+    // If no routeConfig is available we are on the root path
     let label = route.routeConfig && route.routeConfig.data ? route.routeConfig.data.breadcrumb : '';
     let path = route.routeConfig && route.routeConfig.data ? route.routeConfig.path : '';
 
@@ -128,7 +128,7 @@ export class BreadcrumbService {
     const newBreadcrumbs = breadcrumb.label ? [...breadcrumbs, breadcrumb] : [...breadcrumbs];
     if (route.firstChild) {
       // If we are not on our current path yet,
-      // there will be more children to look after, to build our breadcumb
+      // there will be more children to look after, in order to build our breadcumb
       return this.buildBreadCrumb(route.firstChild, nextUrl, newBreadcrumbs);
     }
     return newBreadcrumbs;
