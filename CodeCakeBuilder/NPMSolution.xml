@@ -1,3 +1,5 @@
 <NPMSolution>
-  <Project Path="" IsPublished="true" OutputFolder="" ExpectedName="@signature/json-graph-serializer" />
+  <Project Path="projects/signature-router-history" IsPublished="true" OutputFolder="projects/signature-router-history/dist" ExpectedName="@signature/router-history" />
+  <Project Path="projects/signature-breadcrumb" IsPublished="true" OutputFolder="projects/signature-breadcrumb/dist" ExpectedName="@signature/breadcrumb" />
+  <AngularWorkspace Path="." OutputFolder="./dist" />
 </NPMSolution>

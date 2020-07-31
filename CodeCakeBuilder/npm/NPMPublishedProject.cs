@@ -1,6 +1,7 @@
 using Cake.Common.IO;
 using Cake.Npm;
 using Cake.Npm.Pack;
+using Cake.Yarn;
 using CK.Text;
 using CodeCake.Abstractions;
 using Newtonsoft.Json.Linq;
@@ -76,11 +77,15 @@ namespace CodeCake
             {
                 using( TemporaryPrePack( ArtifactInstance.Version, packageJsonPreProcessor, false ) )
                 {
-                    GlobalInfo.Cake.NpmPack( new NpmPackSettings()
+                    GlobalInfo.Cake.Yarn().Pack( settings =>
                     {
-                        LogLevel = NpmLogLevel.Info,
-                        WorkingDirectory = OutputPath.ToString()
+                        settings.WorkingDirectory = OutputPath.ToString();
                     } );
+                    //GlobalInfo.Cake.NpmPack( new NpmPackSettings()
+                    //{
+                    //    LogLevel = NpmLogLevel.Info,
+                    //    WorkingDirectory = OutputPath.ToString()
+                    //} );
                 }
 
                 if(_ckliLocalFeedMode)
@@ -89,11 +94,15 @@ namespace CodeCake
                     File.Move( tgz, tgz.Path + ".local" );
                     using( TemporaryPrePack( ArtifactInstance.Version, packageJsonPreProcessor, true ) )
                     {
-                        GlobalInfo.Cake.NpmPack( new NpmPackSettings()
+                        GlobalInfo.Cake.Yarn().Pack( settings =>
                         {
-                            LogLevel = NpmLogLevel.Info,
-                            WorkingDirectory = OutputPath.ToString()
+                          settings.WorkingDirectory = OutputPath.ToString();
                         } );
+                        //GlobalInfo.Cake.NpmPack( new NpmPackSettings()
+                        //{
+                        //    LogLevel = NpmLogLevel.Info,
+                        //    WorkingDirectory = OutputPath.ToString()
+                        //} );
                     }
                 }
             }
