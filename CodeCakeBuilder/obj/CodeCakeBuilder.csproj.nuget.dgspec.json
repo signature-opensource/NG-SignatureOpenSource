@@ -1,0 +1,97 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\dev\\NG-SignatureOpenSource\\CodeCakeBuilder\\CodeCakeBuilder.csproj": {}
+  },
+  "projects": {
+    "C:\\dev\\NG-SignatureOpenSource\\CodeCakeBuilder\\CodeCakeBuilder.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\NG-SignatureOpenSource\\CodeCakeBuilder\\CodeCakeBuilder.csproj",
+        "projectName": "CodeCakeBuilder",
+        "projectPath": "C:\\dev\\NG-SignatureOpenSource\\CodeCakeBuilder\\CodeCakeBuilder.csproj",
+        "packagesPath": "C:\\Users\\arthur.cheng\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\NG-SignatureOpenSource\\CodeCakeBuilder\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\arthur.cheng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "CK.Text": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Cake.Yarn": {
+              "target": "Package",
+              "version": "[0.4.6, )"
+            },
+            "NUnit.ConsoleRunner": {
+              "target": "Package",
+              "version": "[3.11.1, )"
+            },
+            "NUnit.Runners.Net4": {
+              "target": "Package",
+              "version": "[2.6.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "NuGet.Credentials": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "NuGet.Protocol": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "SimpleGitVersion.Cake": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
