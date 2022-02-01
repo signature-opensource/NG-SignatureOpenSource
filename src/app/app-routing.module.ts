@@ -6,9 +6,6 @@ import { SecondPageComponent } from './components/second-page/second-page.compon
 const routingConfiguration: ExtraOptions = {
     enableTracing: true,
     relativeLinkResolution: 'legacy'
-}{
-    enableTracing: true,
-    relativeLinkResolution: 'legacy'
 };
 
 const routes: Routes = [
