@@ -4,7 +4,11 @@ import { FirstPageComponent } from './components/first-page/first-page.component
 import { SecondPageComponent } from './components/second-page/second-page.component';
 
 const routingConfiguration: ExtraOptions = {
-  enableTracing: true,
+    enableTracing: true,
+    relativeLinkResolution: 'legacy'
+}{
+    enableTracing: true,
+    relativeLinkResolution: 'legacy'
 };
 
 const routes: Routes = [
