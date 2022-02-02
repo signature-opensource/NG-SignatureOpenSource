@@ -19,6 +19,7 @@ import { BreadcrumbModule } from '../../projects/signature-breadcrumb/src/projec
 import { IconsProviderModule } from './icons-provider.module';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FirstPageComponent } from './components/first-page/first-page.component';
+import { SubFirstPageComponent } from './components/sub-first-page/sub-first-page.component';
 
 registerLocaleData(en);
 
@@ -27,7 +28,8 @@ registerLocaleData(en);
     AppComponent,
     SidebarComponent,
     BreadcrumbComponent,
-    FirstPageComponent
+    FirstPageComponent,
+    SubFirstPageComponent
   ],
   imports: [
     BrowserModule,
